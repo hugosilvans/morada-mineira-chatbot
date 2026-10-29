@@ -39,8 +39,8 @@ A conversa utiliza regras e opções predefinidas. A finalização gera um link 
 Clone o projeto:
 
 ```bash
-git clone https://github.com/hugosilvans/SQUAD20-Morada-Mineira.git
-cd SQUAD20-Morada-Mineira
+git clone https://github.com/hugosilvans/morada-mineira-chatbot.git
+cd morada-mineira-chatbot
 python -m venv .venv
 ```
 
