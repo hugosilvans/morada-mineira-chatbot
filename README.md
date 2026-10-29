@@ -1,8 +1,107 @@
-# **SQUAD 20 - Morada Mineira**
+# Morada Mineira — Chatbot de Atendimento
 
-Chatbot inteligente para a confeitaria **Morada Mineira** que permite aos clientes navegar pelo cardápio, adicionar itens ao carrinho, obter sugestões personalizadas e finalizar compras via WhatsApp.
+Chatbot web desenvolvido em equipe pelo Squad 20 para apoiar o atendimento de uma confeitaria. O cliente pode consultar o cardápio, escolher produtos, montar um carrinho e abrir o WhatsApp com o pedido preenchido.
 
-### Integrantes: 
+## Identidade visual
+
+<img src="static/images/MimoBot.png" alt="Personagem MimoBot utilizado na interface" width="120">
+
+[![Imagem de identidade da Morada Mineira utilizada no fundo da aplicação](static/images/MoradaMineira.png)](static/images/MoradaMineira.png)
+
+As imagens acima são recursos visuais do projeto, não capturas de tela da aplicação.
+
+## Problema e solução
+
+O projeto busca agilizar a consulta de produtos e a montagem de pedidos. A interface de chat oferece opções guiadas e respostas pré-programadas, enquanto o backend organiza os dados em SQLite.
+
+## Funcionalidades
+
+- Consulta do cardápio por categoria
+- Exibição de produtos mais vendidos
+- Sugestões a partir de informações do evento
+- Seleção de opções e quantidade dos produtos
+- Inclusão e edição de itens no carrinho
+- Finalização por link do WhatsApp com mensagem preenchida
+
+A conversa utiliza regras e opções predefinidas. A finalização gera um link para o WhatsApp; não representa envio automático por uma API de mensagens.
+
+## Tecnologias
+
+| Camada | Tecnologias |
+| --- | --- |
+| Interface | HTML, CSS e JavaScript |
+| Backend | Python e Flask |
+| Dados | SQLite |
+| Servidor WSGI | Gunicorn |
+
+## Executar localmente
+
+Clone o projeto:
+
+```bash
+git clone https://github.com/hugosilvans/SQUAD20-Morada-Mineira.git
+cd SQUAD20-Morada-Mineira
+python -m venv .venv
+```
+
+Ative o ambiente virtual no PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+No Linux/macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+Instale as versões declaradas em [requirements.txt](requirements.txt) e inicie:
+
+```bash
+python -m pip install -r requirements.txt
+python app.py
+```
+
+Acesse [http://localhost:5000](http://localhost:5000). A execução direta de `app.py` chama `init_db()` antes de iniciar o servidor.
+
+## Usar a interface
+
+1. Abra **Menu** e selecione uma categoria.
+2. Escolha um produto, suas opções e quantidade.
+3. Confira os itens em **Carrinho**.
+4. Finalize para abrir o link do WhatsApp e revisar a mensagem antes de enviar.
+
+**Favoritos** apresenta categorias de mais vendidos; **Sugestões** solicita informações para orientar a escolha. O número de destino está configurado em `COMPANY_WHATSAPP_NUMBER`, no [app.py](app.py). Para testar, não envie pedidos reais.
+
+## Estrutura
+
+| Caminho | Responsabilidade |
+| --- | --- |
+| [app.py](app.py) | Rotas, regras do chatbot e acesso ao banco |
+| [templates/index.html](templates/index.html) | Interface |
+| [static/script.js](static/script.js) | Interações, menu e carrinho |
+| [static/style.css](static/style.css) | Estilos |
+| [static/images](static/images/) | Identidade visual e fotos dos produtos |
+| [requirements.txt](requirements.txt) | Dependências utilizadas |
+| [Procfile](Procfile) | Comando do servidor para hospedagem |
+
+## Hospedagem
+
+O comando WSGI é `gunicorn app:app`. A importação pelo Gunicorn não executa o bloco principal de `app.py`; em um ambiente novo, inicialize o banco antes de iniciar o servidor:
+
+```bash
+python -c "from app import init_db; init_db()"
+gunicorn app:app
+```
+
+A hospedagem precisa oferecer armazenamento persistente para o SQLite. Antes de uso real, revise a chave de sessão, as configurações e as validações da aplicação.
+
+## Equipe e créditos
+
+Projeto coletivo do Squad 20. Hugo da Silva Nunes integra a equipe abaixo. Os créditos são mantidos em conjunto, sem atribuir funcionalidades individuais que não estejam documentadas.
+
+### Integrantes
 - Elise Akie Sugiyama;
 - Felippe Cotrim da Silva;
 - Heitor Alves Rebouças;
@@ -13,93 +112,10 @@ Chatbot inteligente para a confeitaria **Morada Mineira** que permite aos client
 - Marcio Antônio Freitas de Pinho;
 - Marcus Vinícius Lima Cardoso Fagundes;
 
-### Mentor:
-- Igor Santos;
+### Mentor
 
-## Sobre o projeto
-A empresa **Morada Mineira** enfrenta dificuldades devido à falta de automação em seus processos de gestão e atendimento ao cliente, o que torna o serviço lento e de difícil administração.  
-Como solução, desenvolvemos um **chatbot web** com perguntas pré-programadas e opções de resposta sugeridas, visando agilizar o atendimento e melhorar a experiência do cliente.
-
-## Funcionalidades
-
-- Chat interativo 
-- Navegação de cardápio com imagens
-- Visualização de favoritos/mais vendidos
-- Sugestões personalizadas com desconto em volume
-- Carrinho de compras completo
-- Integração com WhatsApp para finalização de pedidos
-
-## Utilização
-
-- **Menu**: Clique em "Menu" para ver as categorias e depois escolha os produtos
-- **Favoritos**: Clique em "Favoritos" para ver categorias de produtos mais vendidos
-- **Sugestões**: Clique em "Sugestões" e forneça: quantidade, tipo de evento, local (ex: "10, casamento, São Paulo")
-- **Carrinho**: Clique em "Carrinho" para visualizar e editar seus itens
-- **Finalizar**: Complete a compra e envie pelo WhatsApp
-
-## Tecnologias utilizadas
-
-- **Backend**: Flask (Python)
-- **Frontend**: HTML5, CSS3, JavaScript vanilla
-- **Banco de dados**: SQLite
-- **Integração**: WhatsApp API
-
-## Estrutura do projeto
-
-```
-.
-├── app.py                # Servidor Flask e API
-├── db.sqlite             # Banco de dados SQLite
-├── requirements.txt      # Dependências Python
-├── Procfile              # Configuração para deploy
-├── README.md             # Este arquivo
-├── static/
-│   ├── style.css         # Estilos CSS
-│   ├── script.js         # Lógica JavaScript
-│   └── images/           # Imagens (bot, produtos, fundo)
-│       └── MoradaMineira.png
-└── templates/
-    └── index.html        # Interface principal
-```
-## Como executar
-
-### Pré-requisitos
-- Python 3.7+
-- pip
-
-### Instalação Local
-
-1. Clone ou baixe o projeto
-2. Abra o PowerShell no diretório do projeto
-3. Execute os comandos:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python app.py
-```
-
-4. Acesse `http://localhost:5000` no navegador
-
-## Deploy Online
-
-O projeto está pronto para fazer deploy em plataformas como:
-
-### Render.com (Recomendado - Gratuito)
-1. Acesse [render.com](https://render.com)
-2. Faça login com GitHub
-3. Clique "New Web Service"
-4. Selecione o repositório
-5. Configure:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn app:app`
-6. Clique "Deploy"
-
-### Outras opções
-- **Railway.app**: Gratuito com créditos
-- **PythonAnywhere**: Plano gratuito disponível
+- Igor Santos
 
 ## Licença
-Este projeto está licenciado sob a [MIT License](LICENSE).
-Este projeto está licenciado sob a [MIT License](LICENSE).
+
+[MIT](LICENSE).
