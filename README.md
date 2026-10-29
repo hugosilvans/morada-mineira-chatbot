@@ -119,3 +119,7 @@ Projeto coletivo do Squad 20. Hugo da Silva Nunes integra a equipe abaixo. Os cr
 ## Licença
 
 [MIT](LICENSE).
+
+## Origem e atribuição
+
+Este repositório foi iniciado como fork de [EliseSugiyama/SQUAD20-Morada-Mineira](https://github.com/EliseSugiyama/SQUAD20-Morada-Mineira). A base e o histórico incluem contribuições dos autores do projeto de origem. As alterações e a organização mantidas nesta conta podem ser consultadas no histórico de commits. Os créditos e os avisos de licença existentes devem ser preservados.
