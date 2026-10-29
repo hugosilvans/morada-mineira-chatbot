@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
   background: #f0f0f0;
@@ -27,7 +29,7 @@ body {
   background: #fff;
   display: flex;
   flex-direction: column;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -51,7 +53,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #8B6F47;
+  background: #8b6f47;
   padding: 10px 12px;
   border-radius: 8px;
 }
@@ -90,7 +92,7 @@ body {
 
 .opt-header:hover {
   background: #f5f5f5;
-  border-color: #FF7800;
+  border-color: #ff7800;
 }
 
 .chat {
@@ -171,14 +173,14 @@ body {
 
 .user-input:focus {
   outline: none;
-  border-color: #FF7800;
+  border-color: #ff7800;
   background: #fff;
 }
 
 button#send {
   padding: 8px 14px;
   border-radius: 20px;
-  background: #FF7800;
+  background: #ff7800;
   color: #fff;
   border: 0;
   cursor: pointer;
@@ -201,7 +203,7 @@ button#send:hover {
 }
 
 .opt {
-  background: #FF7800;
+  background: #ff7800;
   color: #fff;
   border: 0;
   padding: 6px 10px;
@@ -219,8 +221,8 @@ button#send:hover {
 
 /* Menu item cards - cor #FFE7A4 */
 .menu-item {
-  background: #FFE7A4;
-  border: 1px solid #FFD580;
+  background: #ffe7a4;
+  border: 1px solid #ffd580;
   padding: 10px;
   margin: 8px 0;
   border-radius: 8px;
@@ -228,8 +230,8 @@ button#send:hover {
 }
 
 .menu-item:hover {
-  background: #FFDD7A;
-  border-color: #FFC840;
+  background: #ffdd7a;
+  border-color: #ffc840;
 }
 
 .item-name {
@@ -238,7 +240,7 @@ button#send:hover {
 }
 
 .item-price {
-  color: #FF7800;
+  color: #ff7800;
   font-weight: bold;
   margin: 4px 0;
 }
@@ -258,7 +260,7 @@ button#send:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -307,8 +309,8 @@ button#send:hover {
   margin: 4px 0;
 }
 
-.option-choice input[type="radio"],
-.option-choice input[type="checkbox"] {
+.option-choice input[type='radio'],
+.option-choice input[type='checkbox'] {
   margin-right: 6px;
 }
 

@@ -8,3 +8,11 @@ __pycache__/
 *.sqlite-journal
 *.sqlite-wal
 *.sqlite-shm
+
+node_modules/
+*.o
+*.exe
+*.class
+**/target/
+dist/
+.angular/

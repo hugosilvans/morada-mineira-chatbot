@@ -1,1 +1,2 @@
-Flask>=2.0
+# Compatibilidade com o nome antigo: mantenha as versões em requirements.txt.
+-r requirements.txt

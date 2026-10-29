@@ -9,8 +9,7 @@
   <body>
     <div class="main-layout">
       <!-- Área de conteúdo do site (esquerda) -->
-      <div class="website-area">
-      </div>
+      <div class="website-area"></div>
 
       <!-- Área de chat (lado direito) -->
       <div class="chat-container">
@@ -34,7 +33,9 @@
           <div class="bot-msg">
             <img src="/static/images/MimoBot.png" alt="Bot" class="bot-avatar" />
             <div class="message-bubble">
-              <div class="message-text">Olá! Posso te ajudar com o menu, carrinho, sugestões ou finalizar sua compra.</div>
+              <div class="message-text">
+                Olá! Posso te ajudar com o menu, carrinho, sugestões ou finalizar sua compra.
+              </div>
               <div class="message-time">Agora</div>
             </div>
           </div>
@@ -48,7 +49,7 @@
     </div>
 
     <!-- Modal para adicionar item ao carrinho -->
-    <div id="addModal" class="modal" style="display:none;">
+    <div id="addModal" class="modal" style="display: none">
       <div class="modal-content">
         <span class="modal-close">&times;</span>
         <h2 id="modalTitle"></h2>
@@ -66,7 +67,7 @@
     </div>
 
     <!-- Modal para ver/editar carrinho -->
-    <div id="cartModal" class="modal" style="display:none;">
+    <div id="cartModal" class="modal" style="display: none">
       <div class="modal-content">
         <span class="modal-close">&times;</span>
         <h2>Seu Carrinho</h2>
