@@ -99,8 +99,6 @@ A hospedagem precisa oferecer armazenamento persistente para o SQLite. Antes de 
 
 ## Equipe e créditos
 
-Projeto coletivo do Squad 20. Hugo da Silva Nunes integra a equipe abaixo. Os créditos são mantidos em conjunto, sem atribuir funcionalidades individuais que não estejam documentadas.
-
 ### Integrantes
 - Elise Akie Sugiyama;
 - Felippe Cotrim da Silva;
@@ -122,7 +120,7 @@ Projeto coletivo do Squad 20. Hugo da Silva Nunes integra a equipe abaixo. Os cr
 
 ## Origem e atribuição
 
-Este repositório foi iniciado como fork de [EliseSugiyama/SQUAD20-Morada-Mineira](https://github.com/EliseSugiyama/SQUAD20-Morada-Mineira). A base e o histórico incluem contribuições dos autores do projeto de origem. As alterações e a organização mantidas nesta conta podem ser consultadas no histórico de commits. Os créditos e os avisos de licença existentes devem ser preservados.
+Este repositório foi iniciado como fork de [EliseSugiyama/SQUAD20-Morada-Mineira](https://github.com/EliseSugiyama/SQUAD20-Morada-Mineira).
 
 ## Organização e validação
 
@@ -132,7 +130,3 @@ Este repositório foi iniciado como fork de [EliseSugiyama/SQUAD20-Morada-Mineir
 - Em hospedagem, defina `SECRET_KEY` no ambiente com um valor aleatório e estável. `DB_PATH` permite selecionar um banco separado.
 - Execute `python -m unittest -v` na raiz. Os testes criam SQLite temporário e não modificam `db.sqlite`.
 - O fluxo de WhatsApp abre uma mensagem para revisão; não envia pedidos automaticamente.
-
-## Guia do código
-
-Consulte [GUIA_CODIGO.md](GUIA_CODIGO.md) para localizar os módulos, entender as convenções e estudar as alterações.
